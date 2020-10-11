@@ -11,6 +11,7 @@ main.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/sys/_ty
 main.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/sys/cdefs.h
 main.obj: C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/machine/_types.h
 main.obj: ../HeaderFiles/tm4c123gh6pm.h
+main.obj: ../HeaderFiles/LCD.h
 
 ../main.c: 
 ../HeaderFiles/Keypad.h: 
@@ -23,3 +24,4 @@ C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/sys/_types.h:
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/sys/cdefs.h: 
 C:/ti/ccs930/ccs/tools/compiler/ti-cgt-arm_18.12.4.LTS/include/machine/_types.h: 
 ../HeaderFiles/tm4c123gh6pm.h: 
+../HeaderFiles/LCD.h: 
