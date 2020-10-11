@@ -15,8 +15,13 @@ int main(void) {
     /* used variables */
     unsigned char input = '0';
     int validInput = 0;
-    char C_array[6];
+    int num = 0;
+    int total = 0;
+    int result=0;
+    char input_array[6];
+    int num_array[2];
     static int i = 0;
+    char x;
 
     /* main loop */
     while (1) {
@@ -30,15 +35,54 @@ int main(void) {
             }
             else{
                 if (i < 6) {
-                    C_array[i] = input;
+                    input_array[i] = input;
                     LCD_data(input);
                     i++;
                 }
-                else {
-                    printf("Hello\n");
+                static int j = 0;
+                static int k = 0;
+                for(j = 0; j < 6;j++) {
+                    if((input_array[j] >= '0') & (input_array[j] <= '9')) {
+                        num = input_array[j] - '0';
+                        total = total*10 + num;
+                    }
+                    else{
+                        if(k<=1){
+                            num_array[k] = total;
+                            k++;
+                        }
+                    }
+                }
+
+                /* apply operation */
+                i = 2;
+                x = input_array[i];
+                switch (x) {
+                    case '+':
+                        result = num_array[0] + num_array[1];
+                        break;
+                    case '-':
+                        result = num_array[0] - num_array[1];
+                        break;
+                    case '*':
+                        result = num_array[0] * num_array[1];
+                        break;
+                    case '/':
+                        result = num_array[0] / num_array[1];
+                        break;
+                }
+
+                /* display data */
+                i = 0;
+                while(i <= 1) {
+                    input = result / 10;
+                    LCD_data(input);
+                    input = result % 10;
+                    LCD_data(input);
+                    i++;
                 }
             }
-            delay_Us(500000);
         }
+        delay_Us(500000);
     }
 }
