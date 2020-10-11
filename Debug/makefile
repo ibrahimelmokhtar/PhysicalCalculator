@@ -12,6 +12,7 @@ GEN_CMDS__FLAG :=
 ORDERED_OBJS += \
 "./main.obj" \
 "./tm4c123gh6pm_startup_ccs.obj" \
+"./SourceFiles/Keypad.obj" \
 "./SourceFiles/delay.obj" \
 "../tm4c123gh6pm.cmd" \
 $(GEN_CMDS__FLAG) \
@@ -158,8 +159,8 @@ PhysicalCalcularot.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "tm4c123gh6pm_startup_ccs.obj" "SourceFiles\delay.obj" 
-	-$(RM) "main.d" "tm4c123gh6pm_startup_ccs.d" "SourceFiles\delay.d" 
+	-$(RM) "main.obj" "tm4c123gh6pm_startup_ccs.obj" "SourceFiles\Keypad.obj" "SourceFiles\delay.obj" 
+	-$(RM) "main.d" "tm4c123gh6pm_startup_ccs.d" "SourceFiles\Keypad.d" "SourceFiles\delay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
